@@ -15,6 +15,7 @@ import Testimonials from "@/components/Testimonials";
 import LocationAndMap from "@/components/LocationAndMap";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 export default function HomePage() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#07070A] text-white selection:bg-racing-neon selection:text-black">
+    <main className="relative min-h-screen bg-[#07070A] text-white selection:bg-racing-neon selection:text-black pb-16 sm:pb-0">
       {/* Background Interactive Optimized Particle Canvas */}
       <SpeedCanvas />
 
@@ -36,7 +37,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection onOpenBooking={() => handleOpenBooking()} />
 
-      {/* Interactive Poster & Promo Spotlight (Replacing flat grid) */}
+      {/* Interactive Poster & Promo Spotlight */}
       <PosterSpotlight onOpenBooking={handleOpenBooking} />
 
       {/* Camera Fleet (Bento Grid) */}
@@ -65,6 +66,9 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Mobile Sticky Bottom Action Bar (iPhone & Android) */}
+      <MobileBottomNav onOpenBooking={() => handleOpenBooking()} />
 
       {/* Digital Rental Booking & Document Verification Modal */}
       <BookingModal

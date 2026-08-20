@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Gauge, Zap, Flame, ShieldAlert } from "lucide-react";
+import { Gauge, Flame } from "lucide-react";
 
 export default function SpeedometerTelemetry() {
+  const [mounted, setMounted] = useState(false);
   const [rpm, setRpm] = useState(8500);
   const [speed, setSpeed] = useState(185);
 
   useEffect(() => {
+    setMounted(true);
     const interval = setInterval(() => {
       setRpm(Math.floor(7500 + Math.random() * 2500));
       setSpeed(Math.floor(170 + Math.random() * 45));
@@ -25,7 +26,7 @@ export default function SpeedometerTelemetry() {
         <div>
           <div className="text-[10px] uppercase font-mono tracking-widest text-zinc-400">TELEMETRY SPEED</div>
           <div className="text-sm sm:text-base font-black font-mono text-white tracking-wider">
-            {speed} <span className="text-[10px] text-racing-neon font-normal">KM/H</span>
+            {mounted ? speed : 185} <span className="text-[10px] text-racing-neon font-normal">KM/H</span>
           </div>
         </div>
       </div>
@@ -39,7 +40,8 @@ export default function SpeedometerTelemetry() {
         <div>
           <div className="text-[10px] uppercase font-mono tracking-widest text-zinc-400">RPM REDLINE</div>
           <div className="text-sm sm:text-base font-black font-mono text-white tracking-wider">
-            {rpm.toLocaleString()} <span className="text-[10px] text-racing-purple font-normal">RPM</span>
+            {mounted ? rpm.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "8.500"}{" "}
+            <span className="text-[10px] text-racing-purple font-normal">RPM</span>
           </div>
         </div>
       </div>

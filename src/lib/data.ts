@@ -250,63 +250,69 @@ export const RENTAL_STEPS = [
 export const GALLERY_ITEMS = [
   {
     id: 1,
-    title: "Nocturnal Drag 201M Dragway",
-    camera: "GoPro MAX 360°",
+    title: "Nocturnal Drag 201M High Speed",
+    camera: "GoPro MAX 360° Spherical",
     category: "Drag Night",
-    likes: "1.4k",
+    likes: "1.8k",
     image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80",
-    instaUser: "@sewa.camera.pamulang",
-    height: "h-96"
+    instaUser: "@bachtiar._.photography.id",
+    height: "h-96",
+    caption: "Night race panning shot documentation @bachtiar._.photography.id"
   },
   {
     id: 2,
-    title: "Pit Stop Wheel Burnout & Flame",
-    camera: "Canon EOS DSLR + 50mm f/1.8",
+    title: "Pit Stop Burnout & Flame Exhaust",
+    camera: "Canon EOS DSLR Speed Pro",
     category: "Rolling Shot",
-    likes: "2.1k",
+    likes: "2.4k",
     image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
     instaUser: "@bachtiar._.photography.id",
-    height: "h-80"
+    height: "h-80",
+    caption: "Trackside bokeh shot by Bachtiar Photography"
   },
   {
     id: 3,
-    title: "Biker Helmet POV 360 Angle",
-    camera: "Insta360 X3 Bullet Mode",
+    title: "Biker Cockpit POV 360 Extreme",
+    camera: "Insta360 X3 / X4 Nitro Pro",
     category: "Drag Night",
-    likes: "980",
+    likes: "1.3k",
     image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80",
     instaUser: "@sewa.camera.pamulang",
-    height: "h-96"
+    height: "h-96",
+    caption: "Cockpit camera chin-mount rental unit @sewa.camera.pamulang"
   },
   {
     id: 4,
-    title: "Night Rolling Shot Sentul Track",
-    camera: "Canon Speed Pro Telephoto",
+    title: "Night Rolling Shot BSD Speedway",
+    camera: "Canon Speed Pro + 50mm f/1.8",
     category: "Rolling Shot",
-    likes: "3.4k",
+    likes: "3.9k",
     image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80",
     instaUser: "@bachtiar._.photography.id",
-    height: "h-80"
+    height: "h-80",
+    caption: "High shutter night photography @bachtiar._.photography.id"
   },
   {
     id: 5,
     title: "Vintage VHS Aesthetic Garage Vibe",
     camera: "Vintage 90s Camcorder CCD",
     category: "Aesthetic Y2K",
-    likes: "1.8k",
+    likes: "2.2k",
     image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
     instaUser: "@bachtiar._.photography.id",
-    height: "h-96"
+    height: "h-96",
+    caption: "Y2K Street nostalgia garage reel @bachtiar._.photography.id"
   },
   {
     id: 6,
-    title: "Extreme Low-Angle Exhaust Glow",
-    camera: "DJI Osmo Action 4",
+    title: "Low-Angle Flame Spark Action",
+    camera: "DJI Osmo Action 4 Beast",
     category: "Drag Night",
-    likes: "1.2k",
+    likes: "1.6k",
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80",
     instaUser: "@sewa.camera.pamulang",
-    height: "h-80"
+    height: "h-80",
+    caption: "Swingarm crashproof mount test @sewa.camera.pamulang"
   }
 ];
 

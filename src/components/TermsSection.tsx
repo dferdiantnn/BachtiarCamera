@@ -7,7 +7,7 @@ import { FileCheck, ShieldAlert, CheckCircle2, MapPin, Clock, ArrowUpRight } fro
 
 export default function TermsSection({ onOpenBooking }: { onOpenBooking: () => void }) {
   return (
-    <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
+    <section id="syarat" className="relative py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
       <div className="rounded-3xl bg-[#0B0C14] border border-white/10 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
         
         {/* Header */}

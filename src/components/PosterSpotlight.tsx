@@ -1,4 +1,6 @@
 "use client";
+import { getAssetPath } from "@/lib/utils";
+
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -68,7 +70,7 @@ export default function PosterSpotlight({ onOpenBooking }: PosterSpotlightProps)
               className="group relative max-w-xs sm:max-w-sm w-full aspect-[3/4] rounded-2xl overflow-hidden bg-black/80 border-2 border-white/10 hover:border-racing-neon/60 shadow-2xl transition-all duration-500 cursor-pointer"
             >
               <Image
-                src={activePoster.image}
+                src={getAssetPath(activePoster.image)}
                 alt={activePoster.title}
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -197,7 +199,7 @@ export default function PosterSpotlight({ onOpenBooking }: PosterSpotlightProps)
         >
           <div className="relative max-w-md w-full rounded-2xl overflow-hidden border border-white/20">
             <Image
-              src={zoomPoster}
+              src={getAssetPath(zoomPoster)}
               alt="Poster Preview"
               width={600}
               height={800}

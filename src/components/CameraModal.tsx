@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Check, Star, MessageCircle, Zap, ShieldCheck, Layers } from "lucide-react";
 import { CameraItem } from "@/lib/data";
 import { formatRupiah } from "@/lib/utils";
+import { getAssetPath } from "@/lib/utils";
 
 interface CameraModalProps {
   camera: CameraItem | null;
@@ -52,7 +53,7 @@ export default function CameraModal({ camera, onClose, onOpenBooking }: CameraMo
             {/* Camera Preview Image */}
             <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video md:aspect-[4/5] bg-black/40">
               <Image
-                src={camera.image}
+                src={getAssetPath(camera.image)}
                 alt={camera.name}
                 fill
                 className="object-cover object-center"

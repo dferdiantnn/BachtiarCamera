@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { CAMERAS, CameraItem } from "@/lib/data";
 import { formatRupiah } from "@/lib/utils";
+import { getAssetPath } from "@/lib/utils";
 import { Zap, Star, ArrowUpRight, MessageCircle } from "lucide-react";
 import CameraModal from "./CameraModal";
 
@@ -85,7 +86,7 @@ export default function BentoFleet({ onOpenBooking }: BentoFleetProps) {
             {/* Image Preview with 3D Zoom Effect */}
             <div className="relative z-10 my-2 sm:my-3 w-full h-44 sm:h-52 md:h-60 rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/20 transition-all bg-black/40">
               <Image
-                src={cam.image}
+                src={getAssetPath(cam.image)}
                 alt={cam.name}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

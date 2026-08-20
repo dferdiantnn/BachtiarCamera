@@ -1,4 +1,6 @@
 "use client";
+import { getAssetPath } from "@/lib/utils";
+
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -85,7 +87,7 @@ export default function KenapaHarusSewa({ onOpenBooking }: { onOpenBooking: () =
           >
             <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
               <Image
-                src="/images/posters/poster-kenapa-harus-sewa.jpg"
+                src={getAssetPath("/images/posters/poster-kenapa-harus-sewa.jpg")}
                 alt="Poster Kenapa Harus Sewa Di Sini"
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -114,7 +116,7 @@ export default function KenapaHarusSewa({ onOpenBooking }: { onOpenBooking: () =
         >
           <div className="relative max-w-lg w-full rounded-2xl overflow-hidden border border-white/20">
             <Image
-              src="/images/posters/poster-kenapa-harus-sewa.jpg"
+              src={getAssetPath("/images/posters/poster-kenapa-harus-sewa.jpg")}
               alt="Poster Kenapa Harus Sewa Di Sini"
               width={600}
               height={800}

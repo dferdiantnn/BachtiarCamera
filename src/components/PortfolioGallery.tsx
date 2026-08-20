@@ -1,4 +1,6 @@
 "use client";
+import { getAssetPath } from "@/lib/utils";
+
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -109,7 +111,7 @@ export default function PortfolioGallery() {
             >
               {/* Image */}
               <Image
-                src={item.image}
+                src={getAssetPath(item.image)}
                 alt={item.title}
                 fill
                 className="object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-110"

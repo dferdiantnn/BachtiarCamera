@@ -10,8 +10,17 @@ export function formatRupiah(amount: number): string {
   return `Rp ${numStr}`;
 }
 
+export function getAssetPath(path: string): string {
+  if (!path) return "";
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `${basePath}${cleanPath}`;
+}
+
 export function getWhatsAppLink(cameraName?: string, duration?: string, customText?: string): string {
-  // Primary WhatsApp from official poster: 0895-0720-8615 (also supported: 0896-5428-0181)
   const phone = "6289507208615";
   let message = "Halo Admin Bachtiar Camera! Saya ingin booking rental kamera.\n";
   

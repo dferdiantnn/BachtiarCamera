@@ -1,18 +1,16 @@
 /** @type {import("next").NextConfig} */
-const isGithubPages = process.env.GITHUB_ACTIONS || process.env.DEPLOY_TARGET === "gh-pages";
+const isGithubPages = process.env.GITHUB_ACTIONS === "true" || process.env.DEPLOY_TARGET === "gh-pages";
+const basePath = isGithubPages ? "/BachtiarCamera" : "";
 
 const nextConfig = {
   output: "export",
-  basePath: isGithubPages ? "/BachtiarCamera" : "",
+  basePath: basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "plus.unsplash.com" },
-      { protocol: "https", hostname: "instagram.com" },
-      { protocol: "https", hostname: "*.cdninstagram.com" },
-      { protocol: "https", hostname: "*.fbcdn.net" }
-    ]
   }
 };
 

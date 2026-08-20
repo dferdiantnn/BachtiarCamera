@@ -1,5 +1,9 @@
 /** @type {import("next").NextConfig} */
+const isGithubPages = process.env.GITHUB_ACTIONS || process.env.DEPLOY_TARGET === "gh-pages";
+
 const nextConfig = {
+  output: "export",
+  basePath: isGithubPages ? "/BachtiarCamera" : "",
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -11,4 +15,5 @@ const nextConfig = {
     ]
   }
 };
+
 export default nextConfig;

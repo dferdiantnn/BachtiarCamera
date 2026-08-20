@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-neon: #00FF66;
+  --color-purple: #A855F7;
+  --color-cyan: #00F0FF;
+}
+
+body {
+  background-color: #07070A;
+  color: #F8FAFC;
+  overflow-x: hidden;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Custom glowing borders and carbon patterns */
+.carbon-mesh {
+  background-color: #07070a;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.racing-glow-border {
+  position: relative;
+}
+.racing-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 255, 102, 0.4), rgba(168, 85, 247, 0.4), rgba(0, 240, 255, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.text-gradient-racing {
+  background: linear-gradient(135deg, #00FF66 0%, #00F0FF 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-neon {
+  background: linear-gradient(90deg, #FFFFFF 0%, #00FF66 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(90deg, #FFE500 0%, #FF1E56 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07070A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E1F2E;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 255, 102, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF66;
+}
+
+/* Speed line stripe pattern */
+.racing-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 255, 102, 0.03) 50%,
+    rgba(0, 255, 102, 0.03)
+  );
+  background-size: 100% 4px;
+}

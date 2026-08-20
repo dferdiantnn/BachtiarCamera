@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import SpeedCanvas from "@/components/SpeedCanvas";
 import HeroSection from "@/components/HeroSection";
+import PosterSpotlight from "@/components/PosterSpotlight";
 import BentoFleet from "@/components/BentoFleet";
-import OfficialPostersSection from "@/components/OfficialPostersSection";
 import KenapaHarusSewa from "@/components/KenapaHarusSewa";
 import RentalCalculator from "@/components/RentalCalculator";
 import DragRaceTimeline from "@/components/DragRaceTimeline";
@@ -36,8 +36,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection onOpenBooking={() => handleOpenBooking()} />
 
-      {/* 5 Official Posters Gallery & Price List */}
-      <OfficialPostersSection onOpenBooking={() => handleOpenBooking()} />
+      {/* Interactive Poster & Promo Spotlight (Replacing flat grid) */}
+      <PosterSpotlight onOpenBooking={handleOpenBooking} />
 
       {/* Camera Fleet (Bento Grid) */}
       <BentoFleet onOpenBooking={handleOpenBooking} />

@@ -1,66 +1,66 @@
 "use client";
-import { getAssetPath } from "@/lib/utils";
 
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { WHY_CHOOSE_US } from "@/lib/data";
+import { getAssetPath } from "@/lib/utils";
 import { ShieldCheck, GraduationCap, Box, Sparkles, Camera, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
-export default function KenapaHarusSewa({ onOpenBooking }: { onOpenBooking: () => void }) {
-  const [showPosterZoom, setShowPosterZoom] = useState(false);
+interface KenapaHarusSewaProps {
+  onOpenBooking: () => void;
+}
 
+export default function KenapaHarusSewa({ onOpenBooking }: KenapaHarusSewaProps) {
   const iconMap: Record<string, React.ReactNode> = {
-    ShieldCheck: <ShieldCheck className="w-5 h-5 text-racing-neon" />,
-    GraduationCap: <GraduationCap className="w-5 h-5 text-racing-cyan" />,
-    Box: <Box className="w-5 h-5 text-racing-purple" />,
-    Sparkles: <Sparkles className="w-5 h-5 text-racing-yellow" />,
-    Camera: <Camera className="w-5 h-5 text-racing-neon" />,
+    ShieldCheck: <ShieldCheck className="w-4 h-4 text-racing-neon" />,
+    GraduationCap: <GraduationCap className="w-4 h-4 text-racing-cyan" />,
+    Box: <Box className="w-4 h-4 text-racing-purple" />,
+    Sparkles: <Sparkles className="w-4 h-4 text-racing-yellow" />,
+    Camera: <Camera className="w-4 h-4 text-racing-neon" />,
   };
 
   return (
-    <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <section id="keunggulan" className="relative py-10 sm:py-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
         
         {/* Left Column: 5 Core Reasons from Media 2 */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-7 space-y-4 sm:space-y-5">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-racing-neon/10 border border-racing-neon/20 text-racing-neon text-xs font-mono uppercase tracking-widest mb-3">
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" /> 5 KEUNGGULAN BACHTIAR CAMERA
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-racing-neon/10 border border-racing-neon/20 text-racing-neon text-[11px] font-mono uppercase tracking-wider mb-2">
+              <Sparkles className="w-3 h-3 animate-pulse" /> 5 KEUNGGULAN UTAMA
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
               KENAPA HARUS SEWA{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-racing-neon via-racing-cyan to-racing-purple">
                 DI SINI?
               </span>
             </h2>
-            <p className="text-zinc-400 text-xs sm:text-sm mt-2 leading-relaxed">
-              Kami menjamin kualitas lensa terbaik, penyimpanan unit higienis bebas jamur, dan edukasi setting kamera untuk pemula sampai mahir.
+            <p className="text-zinc-400 text-xs sm:text-sm mt-1 leading-relaxed">
+              Jaminan kualitas optik higienis bebas jamur, dan edukasi setting kamera bagi pemula.
             </p>
           </div>
 
           {/* 5 Reasons Cards List */}
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {WHY_CHOOSE_US.map((item) => (
               <div
                 key={item.number}
-                className="rounded-2xl bg-[#0D0E16] border border-white/10 hover:border-racing-neon/40 p-4 sm:p-5 transition-all duration-300 group flex items-start gap-4"
+                className="rounded-2xl bg-[#0D0E16] border border-white/10 p-3.5 sm:p-4.5 transition-all duration-300 flex items-start gap-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-racing-neon/10 group-hover:border-racing-neon/30 transition-all">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center shrink-0">
                   {iconMap[item.icon]}
                 </div>
 
-                <div className="flex-1 space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-racing-neon transition-colors">
+                <div className="flex-1 space-y-0.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-xs sm:text-sm font-bold text-white leading-tight">
                       {item.number}. {item.title}
                     </h3>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-racing-cyan border border-white/5">
+                    <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-racing-cyan border border-white/5 shrink-0">
                       {item.badge}
                     </span>
                   </div>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-zinc-400 leading-relaxed pt-0.5">
                     {item.desc}
                   </p>
                 </div>
@@ -68,10 +68,10 @@ export default function KenapaHarusSewa({ onOpenBooking }: { onOpenBooking: () =
             ))}
           </div>
 
-          <div className="pt-2">
+          <div className="pt-1">
             <button
               onClick={onOpenBooking}
-              className="px-6 py-3 rounded-xl bg-racing-neon text-black font-bold text-xs sm:text-sm hover:scale-105 transition-all shadow-lg shadow-racing-neon/20 flex items-center gap-2"
+              className="w-full sm:w-auto px-5 py-3 rounded-xl bg-racing-neon text-black font-extrabold text-xs sm:text-sm shadow-md shadow-racing-neon/20 flex items-center justify-center gap-1.5 active:scale-95 transition-transform cursor-pointer"
             >
               <span>Booking Sekarang (Dapat Free Sticker)</span>
               <ArrowUpRight className="w-4 h-4 stroke-[3]" />
@@ -79,52 +79,25 @@ export default function KenapaHarusSewa({ onOpenBooking }: { onOpenBooking: () =
           </div>
         </div>
 
-        {/* Right Column: Original Poster Showcase (Media 2) */}
+        {/* Right Column: Embedded Card Preview (No Fullscreen Trap) */}
         <div className="lg:col-span-5">
-          <div
-            onClick={() => setShowPosterZoom(true)}
-            className="group relative rounded-3xl overflow-hidden bg-black/60 border border-white/15 hover:border-racing-neon/60 p-3 shadow-2xl transition-all duration-500 cursor-pointer"
-          >
-            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
+          <div className="relative rounded-3xl overflow-hidden bg-[#0D0E16] border border-white/15 p-3 shadow-xl">
+            <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-black/60">
               <Image
                 src={getAssetPath("/images/posters/poster-kenapa-harus-sewa.jpg")}
                 alt="Poster Kenapa Harus Sewa Di Sini"
                 fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-contain object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-white bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10">
-                  🔍 Klik untuk Perbesar Poster
-                </span>
-                <span className="text-xs font-mono text-racing-neon bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-racing-neon/30">
-                  Official Leaflet
-                </span>
-              </div>
+            </div>
+            <div className="text-center pt-2 text-[10px] font-mono text-zinc-400">
+              Official Leaflet • Bachtiar Camera Pamulang
             </div>
           </div>
         </div>
 
       </div>
-
-      {/* Poster Zoom Modal */}
-      {showPosterZoom && (
-        <div
-          onClick={() => setShowPosterZoom(false)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-pointer"
-        >
-          <div className="relative max-w-lg w-full rounded-2xl overflow-hidden border border-white/20">
-            <Image
-              src={getAssetPath("/images/posters/poster-kenapa-harus-sewa.jpg")}
-              alt="Poster Kenapa Harus Sewa Di Sini"
-              width={600}
-              height={800}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

@@ -6,13 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatRupiah(amount: number): string {
-  // Deterministic formatting across Node.js SSR and all browser environments
   const numStr = Math.round(amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return `Rp ${numStr}`;
 }
 
 export function getWhatsAppLink(cameraName?: string, duration?: string, customText?: string): string {
-  const phone = "6289654280181";
+  // Primary WhatsApp from official poster: 0895-0720-8615 (also supported: 0896-5428-0181)
+  const phone = "6289507208615";
   let message = "Halo Admin Bachtiar Camera! Saya ingin booking rental kamera.\n";
   
   if (cameraName) {
@@ -22,9 +22,9 @@ export function getWhatsAppLink(cameraName?: string, duration?: string, customTe
     message += `\n⏱ Durasi: ${duration}`;
   }
   if (customText) {
-    message += `\n📝 Catatan/Aksesoris: ${customText}`;
+    message += `\n📝 Catatan/Dokumen: ${customText}`;
   }
   
-  message += "\n\nMohon info ketersediaan unit dan jadwal pickup di Pamulang Bendabaru. Terima kasih!";
+  message += "\n\nSaya telah membaca persyaratan (KTP Asli + SIM/KK / Deposit) dan siap kirim foto dokumen. Mohon info ketersediaan unit di Pamulang Bendabaru / Pamulang Square. Terima kasih!";
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

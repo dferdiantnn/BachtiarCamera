@@ -3,21 +3,22 @@
 import React from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Check, Star, MessageCircle, Zap, ShieldCheck, Clock, Layers, Sparkles } from "lucide-react";
+import { X, Check, Star, MessageCircle, Zap, ShieldCheck, Layers } from "lucide-react";
 import { CameraItem } from "@/lib/data";
-import { formatRupiah, getWhatsAppLink } from "@/lib/utils";
+import { formatRupiah } from "@/lib/utils";
 
 interface CameraModalProps {
   camera: CameraItem | null;
   onClose: () => void;
+  onOpenBooking?: (camId: string) => void;
 }
 
-export default function CameraModal({ camera, onClose }: CameraModalProps) {
+export default function CameraModal({ camera, onClose, onOpenBooking }: CameraModalProps) {
   if (!camera) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -33,7 +34,7 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-3xl rounded-3xl bg-[#0F101A] border border-white/15 p-6 sm:p-8 shadow-2xl shadow-black z-10 my-8 overflow-hidden"
+          className="relative w-full max-w-3xl rounded-3xl bg-[#0F101A] border border-white/15 p-5 sm:p-7 shadow-2xl z-10 my-6 max-h-[90vh] overflow-y-auto"
         >
           {/* Neon Top Edge Accent */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-racing-neon via-racing-cyan to-racing-purple" />
@@ -41,8 +42,8 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-zinc-300 hover:text-white transition-all"
-            aria-label="Close modal"
+            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-zinc-300 hover:text-white transition-all"
+            aria-label="Tutup modal"
           >
             <X className="w-5 h-5" />
           </button>
@@ -71,15 +72,15 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
             </div>
 
             {/* Content & Specs */}
-            <div className="space-y-5">
+            <div className="space-y-4">
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-racing-cyan">
                   Katalog Unit Bachtiar Camera
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
                   {camera.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-300 mt-2 leading-relaxed">
+                <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
                   {camera.description}
                 </p>
               </div>
@@ -87,7 +88,7 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
               {/* Racing Use Case */}
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10">
                 <div className="text-[11px] font-mono uppercase text-racing-neon flex items-center gap-1.5 font-bold">
-                  <Zap className="w-3.5 h-3.5" /> Best For Drag & Track:
+                  <Zap className="w-3.5 h-3.5" /> Best For:
                 </div>
                 <div className="text-xs text-zinc-200 mt-1">
                   {camera.racingUse}
@@ -96,10 +97,10 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
 
               {/* Specs List */}
               <div>
-                <div className="text-xs font-mono uppercase text-zinc-400 mb-2 flex items-center gap-1.5">
+                <div className="text-xs font-mono uppercase text-zinc-400 mb-1.5 flex items-center gap-1.5">
                   <Layers className="w-3.5 h-3.5 text-racing-purple" /> Spesifikasi Utama:
                 </div>
-                <ul className="space-y-1.5">
+                <ul className="space-y-1">
                   {camera.specs.map((spec, i) => (
                     <li key={i} className="text-xs text-zinc-300 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-racing-cyan" />
@@ -111,7 +112,7 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
 
               {/* Inclusions List */}
               <div>
-                <div className="text-xs font-mono uppercase text-zinc-400 mb-2 flex items-center gap-1.5">
+                <div className="text-xs font-mono uppercase text-zinc-400 mb-1.5 flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-racing-neon" /> Paket Rental Termasuk:
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
@@ -129,7 +130,7 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
                 <div>
                   <div className="text-[10px] font-mono uppercase text-zinc-400">Harga Rental</div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-xl sm:text-2xl font-black text-racing-neon font-mono">
+                    <span className="text-lg sm:text-xl font-black text-racing-neon font-mono">
                       {formatRupiah(camera.price12h)}
                     </span>
                     <span className="text-xs text-zinc-400">/ 12 Jam</span>
@@ -141,15 +142,13 @@ export default function CameraModal({ camera, onClose }: CameraModalProps) {
                   </div>
                 </div>
 
-                <a
-                  href={getWhatsAppLink(camera.name, "24 Jam")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-racing-neon to-emerald-400 text-black font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-racing-neon/30 hover:shadow-racing-neon/60 hover:scale-105 active:scale-95 transition-all"
+                <button
+                  onClick={() => onOpenBooking?.(camera.id)}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-racing-neon to-emerald-400 text-black font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-racing-neon/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 fill-black" />
-                  <span>Sewa Unit Ini Sekarang</span>
-                </a>
+                  <span>Isi Formulir Booking</span>
+                </button>
               </div>
             </div>
           </div>

@@ -4,9 +4,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Camera, MessageCircle, Menu, X, MapPin, ChevronRight, Phone } from "lucide-react";
-import { getWhatsAppLink } from "@/lib/utils";
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenBooking?: () => void;
+}
+
+export default function Navbar({ onOpenBooking }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,11 +22,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Kamera & Unit", href: "#katalog" },
-    { label: "Kalkulator Sewa", href: "#kalkulator" },
-    { label: "Cara Sewa", href: "#alur-sewa" },
-    { label: "Galeri Balap", href: "#galeri" },
-    { label: "Lokasi & Kontak", href: "#lokasi" },
+    { label: "Armada", href: "#katalog" },
+    { label: "Keunggulan", href: "#keunggulan" },
+    { label: "Kalkulator", href: "#kalkulator" },
+    { label: "Syarat Sewa", href: "#syarat" },
+    { label: "Galeri", href: "#galeri" },
+    { label: "Lokasi", href: "#lokasi" },
   ];
 
   return (
@@ -31,8 +35,8 @@ export default function Navbar() {
       <div
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${
           scrolled
-            ? "bg-[#0B0B12]/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/80 py-2.5 px-4 sm:px-6"
-            : "bg-[#0B0B12]/70 backdrop-blur-md border border-white/10 py-2.5 px-4 sm:px-6"
+            ? "bg-[#0B0B12]/90 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/80 py-2 px-4 sm:px-6"
+            : "bg-[#0B0B12]/75 backdrop-blur-md border border-white/10 py-2.5 px-4 sm:px-6"
         }`}
       >
         <div className="flex items-center justify-between">
@@ -44,12 +48,12 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-sm sm:text-lg tracking-wider text-white flex items-center gap-1">
+              <span className="font-extrabold text-sm sm:text-base tracking-wider text-white flex items-center gap-1">
                 BACHTIAR<span className="text-racing-neon">.CAMERA</span>
               </span>
               <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-mono text-zinc-400 flex items-center gap-1">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-racing-neon animate-pulse" />
-                Pamulang • 360° Rental
+                Pamulang Square & Bendabaru (24 Jam)
               </span>
             </div>
           </Link>
@@ -60,7 +64,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="px-3.5 py-1.5 text-xs lg:text-sm font-medium text-zinc-300 hover:text-racing-neon hover:bg-white/[0.04] rounded-lg transition-all"
+                className="px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-racing-neon hover:bg-white/[0.04] rounded-lg transition-all"
               >
                 {link.label}
               </a>
@@ -69,43 +73,28 @@ export default function Navbar() {
 
           {/* Desktop Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
-              href="https://maps.app.goo.gl/vdjsMDERsLie4VwW9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-zinc-400 bg-white/[0.03] border border-white/5 hover:border-racing-neon/40 hover:text-white transition-all"
+            <button
+              onClick={onOpenBooking}
+              className="relative group overflow-hidden px-4 py-2 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-racing-neon via-emerald-400 to-racing-cyan shadow-md shadow-racing-neon/30 hover:shadow-racing-neon/60 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1.5 cursor-pointer"
             >
-              <MapPin className="w-3.5 h-3.5 text-racing-neon" />
-              <span>Bendabaru, Tangsel</span>
-            </a>
-
-            <a
-              href={getWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group overflow-hidden px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-black bg-gradient-to-r from-racing-neon via-emerald-400 to-racing-cyan shadow-lg shadow-racing-neon/30 hover:shadow-racing-neon/60 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
-            >
-              <MessageCircle className="w-4 h-4 text-black fill-black" />
-              <span>Booking WhatsApp</span>
-              <span className="absolute top-0 -left-full w-full h-full bg-white/30 transform -skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
-            </a>
+              <MessageCircle className="w-3.5 h-3.5 text-black fill-black" />
+              <span>Formulir Sewa (WA)</span>
+            </button>
           </div>
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href={getWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-racing-neon text-black font-bold text-xs flex items-center justify-center shadow-md shadow-racing-neon/30"
-              aria-label="WhatsApp Fast Contact"
+            <button
+              onClick={onOpenBooking}
+              className="p-2 rounded-lg bg-racing-neon text-black font-bold text-xs flex items-center justify-center shadow-md shadow-racing-neon/30 cursor-pointer"
+              aria-label="Buka Formulir Sewa"
             >
-              <Phone className="w-4 h-4" />
-            </a>
+              <MessageCircle className="w-4 h-4 fill-black" />
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-zinc-300 hover:text-white bg-white/5 rounded-lg border border-white/10"
-              aria-label="Toggle navigation menu"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -128,7 +117,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-xs font-medium text-zinc-200 hover:text-racing-neon hover:bg-white/[0.07] transition-all"
+                  className="flex items-center justify-between px-3.5 py-2 rounded-xl bg-white/[0.03] text-xs font-medium text-zinc-200 hover:text-racing-neon hover:bg-white/[0.07] transition-all"
                 >
                   <span>{link.label}</span>
                   <ChevronRight className="w-3.5 h-3.5 text-zinc-500" />
@@ -137,15 +126,16 @@ export default function Navbar() {
             </div>
 
             <div className="pt-2 border-t border-white/10 flex flex-col gap-2">
-              <a
-                href={getWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenBooking?.();
+                }}
                 className="w-full py-2.5 rounded-xl text-center font-bold text-xs bg-racing-neon text-black shadow-lg shadow-racing-neon/30 flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-black" />
-                <span>Chat WhatsApp Admin (+62 896-5428-0181)</span>
-              </a>
+                <span>Isi Formulir Sewa Sekarang</span>
+              </button>
             </div>
           </motion.div>
         )}

@@ -4,10 +4,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { CAMERAS, CameraItem } from "@/lib/data";
 import { formatRupiah } from "@/lib/utils";
-import { Zap, Star, ArrowUpRight } from "lucide-react";
+import { Zap, Star, ArrowUpRight, MessageCircle } from "lucide-react";
 import CameraModal from "./CameraModal";
 
-export default function BentoFleet() {
+interface BentoFleetProps {
+  onOpenBooking?: (camId: string) => void;
+}
+
+export default function BentoFleet({ onOpenBooking }: BentoFleetProps) {
   const [selectedCamera, setSelectedCamera] = useState<CameraItem | null>(null);
 
   return (
@@ -16,7 +20,7 @@ export default function BentoFleet() {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-racing-neon/10 border border-racing-neon/20 text-racing-neon text-xs font-mono uppercase tracking-widest mb-2">
-            <Zap className="w-3.5 h-3.5 animate-pulse" /> ARMADA KAMERA RACING TANGSEL
+            <Zap className="w-3.5 h-3.5 animate-pulse" /> ARMADA KAMERA RACING & FOTOGRAFI
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-tight">
             ARMADA KAMERA &{" "}
@@ -25,7 +29,7 @@ export default function BentoFleet() {
             </span>
           </h2>
           <p className="text-zinc-400 text-xs sm:text-base max-w-2xl mt-1 font-normal">
-            Pilihan unit GoPro 360°, DSLR, Action Cam, hingga Vintage Camcorder siap tempur untuk balap & hunting.
+            Pilihan unit Insta360 X3, Canon 1300D, Fujifilm X-A3, GoPro MAX, dan Jasa Fotografi Profesional.
           </p>
         </div>
 
@@ -121,16 +125,25 @@ export default function BentoFleet() {
             {/* Bottom Price & Booking Button */}
             <div className="relative z-10 pt-4 mt-3 border-t border-white/10 flex items-center justify-between">
               <div>
-                <div className="text-[9px] font-mono uppercase text-zinc-500">Mulai dari</div>
+                <div className="text-[9px] font-mono uppercase text-zinc-500">
+                  {cam.category === "DSLR" ? "Tarif Promo" : "Tarif Sewa"}
+                </div>
                 <div className="text-base sm:text-lg font-black text-racing-neon font-mono">
                   {formatRupiah(cam.price12h)}
                   <span className="text-[10px] font-normal text-zinc-400 font-sans"> / 12 Jam</span>
                 </div>
               </div>
 
-              <div className="p-2 rounded-xl bg-white/5 group-hover:bg-racing-neon text-white group-hover:text-black transition-all">
-                <ArrowUpRight className="w-4 h-4" />
-              </div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenBooking?.(cam.id);
+                }}
+                className="px-3 py-1.5 rounded-xl bg-white/5 group-hover:bg-racing-neon text-white group-hover:text-black transition-all text-xs font-mono font-bold flex items-center gap-1"
+              >
+                <span>Sewa</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         ))}
@@ -140,6 +153,10 @@ export default function BentoFleet() {
       <CameraModal
         camera={selectedCamera}
         onClose={() => setSelectedCamera(null)}
+        onOpenBooking={(camId) => {
+          setSelectedCamera(null);
+          onOpenBooking?.(camId);
+        }}
       />
     </section>
   );

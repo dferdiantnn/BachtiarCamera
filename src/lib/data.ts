@@ -1,7 +1,7 @@
 export interface CameraItem {
   id: string;
   name: string;
-  category: "360" | "DSLR" | "Action" | "Vintage";
+  category: "360" | "DSLR" | "Mirrorless" | "Action" | "Vintage" | "Jasa";
   tag: string;
   tagColor: "green" | "purple" | "cyan" | "yellow";
   price12h: number;
@@ -12,6 +12,7 @@ export interface CameraItem {
   specs: string[];
   inclusions: string[];
   image: string;
+  posterImage?: string;
   rating: number;
   reviewCount: number;
   racingUse: string;
@@ -20,104 +21,105 @@ export interface CameraItem {
 
 export const CAMERAS: CameraItem[] = [
   {
+    id: "insta360-x3",
+    name: "Insta360 X3 Extreme 360°",
+    category: "360",
+    tag: "Paling Laris — Pamulang Square",
+    tagColor: "cyan",
+    badgeAccent: "from-cyan-400 to-blue-500",
+    price12h: 165000,
+    price24h: 200000,
+    featured: true,
+    bentoSpan: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
+    description: "Kamera aksi 360 derajat terbaik untuk drag bike, motovlog & sunmori. Support 5.7K/30FPS, 4K/60FPS, Invisible selfie stick, dan Free Bracket bebas pilih.",
+    specs: [
+      "5.7K 30fps / 4K 60fps 360° Spherical Video",
+      "FlowState Stabilization + 360 Horizon Lock",
+      "Active HDR Mode untuk balapan malam",
+      "Free Bracket Bebas Pilih (Stang / Helm / Spion)",
+      "Opsi Tambah 1 Baterai Extra: +Rp 50.000"
+    ],
+    inclusions: [
+      "Unit Insta360 X3 + Lensguard Baru",
+      "Baterai Original + Fast Charger",
+      "Invisible Stick 114cm Carbon Style",
+      "MicroSD 128GB Sandisk Extreme Pro",
+      "1x FREE Bracket Pilihan (Helm/Stang/Suction)",
+      "Hard Pouch Case & Lens Cap"
+    ],
+    image: "/images/posters/poster-insta360-x3.jpg",
+    posterImage: "/images/posters/poster-insta360-x3.jpg",
+    rating: 5.0,
+    reviewCount: 210,
+    racingUse: "Cockpit helm 360°, angle drone-like belakang motor drag, dan rolling shot"
+  },
+  {
+    id: "canon-1300d-fuji-xa3",
+    name: "Canon 1300D & Fujifilm X-A3",
+    category: "DSLR",
+    tag: "Promo 130K / Hari",
+    tagColor: "purple",
+    badgeAccent: "from-purple-400 to-indigo-500",
+    price12h: 90000,
+    price24h: 130000,
+    featured: true,
+    bentoSpan: "col-span-1 md:col-span-1 lg:col-span-1 row-span-2",
+    description: "Paket hemat DSLR Canon 1300D & Mirrorless Fujifilm X-A3. Hasil tone warna warm & cinematic, cocok untuk photoshoot paddock, event, dan rolling shot.",
+    specs: [
+      "24.2 MP APS-C Sensor Tajam & Jernih",
+      "Lensa Kit 18-55mm IS STM + 50mm Bokeh",
+      "Full HD 60fps Crisp Night Video",
+      "Built-in WiFi Transfer Cepat ke HP",
+      "Disimpan Dalam Drybox Anti-Jamur"
+    ],
+    inclusions: [
+      "Body Kamera Canon 1300D / Fuji X-A3",
+      "Lensa Kit + Lens Hood Anti-Flare",
+      "2x Baterai + Charger Desktop",
+      "SD Card High Speed 64GB",
+      "Strap Kamera + Tas Kamera Waterproof"
+    ],
+    image: "/images/posters/poster-canon-fuji.jpg",
+    posterImage: "/images/posters/poster-canon-fuji.jpg",
+    rating: 4.9,
+    reviewCount: 165,
+    racingUse: "Foto bokeh pit-stop, rolling shot mobil malam, dan portofolio balap"
+  },
+  {
     id: "gopro-max-360",
     name: "GoPro MAX 360° Spherical",
     category: "360",
-    tag: "POV Pembalap",
+    tag: "POV Pembalap Ekstrem",
     tagColor: "green",
     badgeAccent: "from-emerald-400 to-green-500",
     price12h: 120000,
     price24h: 175000,
-    featured: true,
-    bentoSpan: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
-    description: "Kamera aksi 360 derajat terbaik untuk drag bike & sirkuit. Reframe video sesuka hati pasca balapan tanpa kehilangan momen sedikit pun.",
+    bentoSpan: "col-span-1 md:col-span-1 lg:col-span-1",
+    description: "Kamera 360 tangguh tahan banting dengan Max HyperSmooth. Audio 6 mikrofon spherical untuk tangkap raungan knalpot balap secara jernih.",
     specs: [
       "5.6K 30FPS 360° Spherical Video",
-      "Max HyperSmooth Stabilization Ekstrem",
-      "PowerPano 270° Anti Distorsi",
-      "6 Built-in Spherical Microphones",
+      "Max HyperSmooth Stabilization",
+      "PowerPano 270° Anti-Distorsi",
+      "6 Built-in Microphones 360° Audio",
       "Waterproof 5M + Tahan Getaran Tinggi"
     ],
     inclusions: [
-      "GoPro MAX 360 Body Unit",
-      "2x Battery High Capacity",
-      "Dual Fast Charger + Kabel Type-C",
-      "MicroSD 128GB Sandisk Extreme Pro",
-      "Helmet Chin Mount + Handlebar Mount CNC",
-      "Invisible Selfie Stick 120cm",
-      "Hard Carbon Shell Protective Case"
+      "Unit GoPro MAX 360 + Lens Cap",
+      "2x Baterai + Dual Charger Fast",
+      "MicroSD 128GB V30",
+      "Full Face Chin Mount",
+      "Invisible Stick 120cm"
     ],
-    image: "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1000&q=80",
     rating: 4.9,
     reviewCount: 148,
-    racingUse: "Perekaman sudut helm kokpit 360° & slow motion high-speed tire burnout"
-  },
-  {
-    id: "canon-dslr-pro",
-    name: "Canon EOS DSLR Speed Pro",
-    category: "DSLR",
-    tag: "DSLR Juara",
-    tagColor: "purple",
-    badgeAccent: "from-purple-400 to-indigo-500",
-    price12h: 150000,
-    price24h: 220000,
-    featured: true,
-    bentoSpan: "col-span-1 md:col-span-1 lg:col-span-1 row-span-2",
-    description: "Kamera DSLR andalan fotografer sirkuit dan pit-stop. Sensor jernih dengan shutter speed tinggi untuk freeze aksi balap nocturnal.",
-    specs: [
-      "24.2 MP APS-C CMOS Sensor Tajam",
-      "Dual Pixel CMOS AF High-speed Tracking",
-      "Shutter Speed hingga 1/4000s Freeze Action",
-      "Full HD 60fps Crisp Night Video",
-      "Lensa 18-55mm IS STM + 50mm f/1.8 Bokeh"
-    ],
-    inclusions: [
-      "Body Canon DSLR + 2 Lensa Pilihan",
-      "2x Original Batteries + Charger",
-      "SD Card High Speed 64GB Extreme Pro",
-      "Camera Strap & Lens Hood Anti Flare",
-      "Tas Kamera Waterproof Heavy Duty"
-    ],
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80",
-    rating: 4.8,
-    reviewCount: 104,
-    racingUse: "Foto rolling shot panning malam hari & portrait kemenangan di garis finish"
-  },
-  {
-    id: "insta360-x4-bullet",
-    name: "Insta360 X3 / X4 Nitro Pro",
-    category: "360",
-    tag: "Bullet Time Action",
-    tagColor: "cyan",
-    badgeAccent: "from-cyan-400 to-blue-500",
-    price12h: 140000,
-    price24h: 195000,
-    bentoSpan: "col-span-1 md:col-span-1 lg:col-span-1",
-    description: "Kamera aksi 360 dengan fitur bullet time dan invisible selfie stick, menghasilkan angle seperti drone video yang terbang mengitari motor.",
-    specs: [
-      "8K 30fps / 5.7K 60fps 360° Capture",
-      "FlowState Stabilization + 360 Horizon Lock",
-      "Active HDR Night Mode for Racing Lights",
-      "AI Gestures & Voice Control 2.0",
-      "Touchscreen Besar Ultra Responsive"
-    ],
-    inclusions: [
-      "Unit Insta360 X3/X4",
-      "2x Extreme Endurance Batteries",
-      "Invisible Stick Carbon Edition 114cm",
-      "Lens Cap Silicone & Clamp Mount",
-      "MicroSD 128GB V30 Sandisk Extreme"
-    ],
-    image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1000&q=80",
-    rating: 5.0,
-    reviewCount: 182,
-    racingUse: "Angle cinematic drone-like dari buntut belakang drag bike"
+    racingUse: "Perekaman sudut helm kokpit 360° dan burnout roda belakang"
   },
   {
     id: "dji-action-4",
     name: "DJI Osmo Action 4 Beast",
     category: "Action",
-    tag: "Tahan Banting",
+    tag: "Tahan Banting & Panas",
     tagColor: "yellow",
     badgeAccent: "from-yellow-400 to-amber-500",
     price12h: 110000,
@@ -129,7 +131,7 @@ export const CAMERAS: CameraItem[] = [
       "4K 120fps Ultra-Wide 155° FOV",
       "RockSteady 3.0+ & HorizonBalancing",
       "Magnetic Quick-Release Mount",
-      "Tahan Suhu Ekstrem & Tahan Banting"
+      "Tahan Getaran Ekstrem & Tahan Banting"
     ],
     inclusions: [
       "DJI Action 4 Unit",
@@ -141,7 +143,7 @@ export const CAMERAS: CameraItem[] = [
     image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1000&q=80",
     rating: 4.9,
     reviewCount: 119,
-    racingUse: "Bumper mount mobil / shock depan motor dengan getaran tinggi"
+    racingUse: "Bumper mount mobil / swingarm motor balap"
   },
   {
     id: "vintage-camcorder-y2k",
@@ -158,15 +160,14 @@ export const CAMERAS: CameraItem[] = [
       "Original Warm CCD Sensor Tone",
       "Optical Zoom 20x Smooth Rocker",
       "Built-in Night Flash Light",
-      "Direct SD Card digital export kit",
+      "Direct Card Reader to iPhone/Android",
       "Vintage Date Stamp on-screen"
     ],
     inclusions: [
       "Vintage Camcorder Body Unit",
       "Battery Pack + AC Power Charger",
       "Converter Card Reader to iPhone/Android",
-      "Strap Vintage Kulit",
-      "Retro Pouch Bag"
+      "Strap Vintage Kulit + Pouch Bag"
     ],
     image: "https://images.unsplash.com/photo-1590291103653-997f5deee905?auto=format&fit=crop&w=1000&q=80",
     rating: 4.7,
@@ -174,191 +175,301 @@ export const CAMERAS: CameraItem[] = [
     racingUse: "Video dokumentasi pit-crew & after-party sirkuit bertema Y2K"
   },
   {
-    id: "drag-mount-kit",
-    name: "Racing Mount & Clamp Pro Kit",
-    category: "Action",
-    tag: "Aksesoris Juara",
+    id: "jasa-fotografi-pro",
+    name: "Jasa Foto & Video (Wedding / Party / Photoshoot)",
+    category: "Jasa",
+    tag: "Buka Jasa Dokumentasi",
     tagColor: "green",
     badgeAccent: "from-emerald-400 to-teal-500",
-    price12h: 40000,
-    price24h: 60000,
+    price12h: 350000,
+    price24h: 600000,
     bentoSpan: "col-span-1 md:col-span-1 lg:col-span-1",
-    description: "Paket mounting heavy-duty all-in-one yang aman hingga kecepatan 200 km/jam. Suction cup double-lock dan jepitan stang CNC aluminium.",
+    description: "Kami tidak hanya menyewakan unit kamera, tapi juga melayani jasa fotografer & videografer profesional untuk Wedding, Birthday, Prewedding, Otomotif, dan Photoshoot.",
     specs: [
-      "Double Vacuum Suction Cup (200km/h rated)",
-      "CNC Aluminium Handlebar & Footstep Clamp",
-      "Full-Face Helmet Chin Strap Mount",
-      "Chesty Chest Mount Harness",
-      "Telescopic Invisible Carbon Pole"
+      "Fotografer & Videografer Berpengalaman",
+      "Full Gear DSLR/Mirrorless + Lighting Studio",
+      "Termasuk Editing Foto & Color Grading Video",
+      "Pengiriman File Cepat via Google Drive HD",
+      "Free Konsultasi Konsep & Lokasi Photoshoot"
     ],
     inclusions: [
-      "6x Modul Mounting Pilihan",
-      "Safety Tether Wire Cable Baja",
-      "Wrench Screw Key + 4x Long Screws",
-      "Padded Carry Case"
+      "1-2 Fotografer / Videografer Standby",
+      "Semua File Foto Mentah (RAW/JPEG)",
+      "Puluhan Foto Edited Terbaik",
+      "Video Highlight Teaser 1 Menit Instagram"
     ],
-    image: "https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1000&q=80",
-    rating: 4.9,
-    reviewCount: 95,
-    racingUse: "Pemasangan kamera di tangki, swingarm, helm, dan spakbor motor balap"
+    image: "/images/posters/poster-kenapa-harus-sewa.jpg",
+    posterImage: "/images/posters/poster-kenapa-harus-sewa.jpg",
+    rating: 5.0,
+    reviewCount: 88,
+    racingUse: "Dokumentasi event balap resmi, photoshoot motor/mobil, dan wedding"
   }
 ];
 
-export const RENTAL_STEPS = [
+export const OFFICIAL_POSTERS = [
   {
-    step: "01",
-    title: "Pilih Unit & Jadwal",
-    subtitle: "Tentukan Senjata Rekamanmu",
-    desc: "Pilih kamera (GoPro 360, Insta360, DSLR, Action Cam) dan tentukan durasi sewa (12 Jam / 24 Jam / Paket Weekend). Klik WhatsApp untuk konsultasi cepat.",
-    icon: "Camera",
-    badge: "Stage 1 — Grid Start"
+    id: 1,
+    title: "Open Sewa Canon 1300D & Fujifilm X-A3",
+    subtitle: "Hanya 130K / Hari — Syarat & Ketentuan Berlaku",
+    image: "/images/posters/poster-canon-fuji.jpg",
+    category: "Promo DSLR & Mirrorless",
+    badge: "130K/Hari"
   },
   {
-    step: "02",
-    title: "Siapkan KTP / SIM / KK",
-    subtitle: "Verifikasi Tanpa Ribet",
-    desc: "Siapkan minimal 2 identitas asli yang masih berlaku (KTP / SIM C / KK / Kartu Pelajar / Mahasiswa) sebagai jaminan keamanan penyewaan.",
-    icon: "FileCheck",
-    badge: "Stage 2 — Scrutineering"
+    id: 2,
+    title: "Open Sewa Insta360 X3 24 Jam",
+    subtitle: "12 Jam 165K | 24 Jam 200K + Free Bracket & Batre",
+    image: "/images/posters/poster-insta360-x3.jpg",
+    category: "Promo 360° Action Cam",
+    badge: "Best Seller"
   },
   {
-    step: "03",
-    title: "Deposit / Verifikasi Kilat",
-    subtitle: "Proses Cepat 5 Menit",
-    desc: "Admin memverifikasi data secara instan dalam 5 menit. Tanpa birokrasi berbelit, unit langsung di-lock dan disiapkan siap gas.",
+    id: 3,
+    title: "5 Alasan Kenapa Harus Sewa di Bachtiar Camera",
+    subtitle: "Lensguard Baru, Diajarin Sampai Bisa, Drybox, Free Sticker, Buka Jasa Foto",
+    image: "/images/posters/poster-kenapa-harus-sewa.jpg",
+    category: "Keunggulan Layanan",
+    badge: "Pelayanan Juara"
+  },
+  {
+    id: 4,
+    title: "Persyaratan Umum Dokumen Identitas Jaminan",
+    subtitle: "KTP Wajib Asli + SIM/KK Fotokopi / Deposit 500K",
+    image: "/images/posters/poster-persyaratan-dokumen.jpg",
+    category: "Syarat Sewa",
+    badge: "Wajib Baca"
+  },
+  {
+    id: 5,
+    title: "Ketentuan Biaya & Durasi Sewa",
+    subtitle: "Diskon 10K/hari (sewa >= 3 hari), Toleransi 1 jam, Buka 24 Jam",
+    image: "/images/posters/poster-ketentuan-biaya.jpg",
+    category: "Aturan Biaya",
+    badge: "24 Jam Operasional"
+  }
+];
+
+export const WHY_CHOOSE_US = [
+  {
+    number: "01",
+    title: "Lensguard Selalu Diganti",
+    desc: "Meskipun lecet sedikit, kami selalu ganti baru demi kejernihan & hasil video maksimal tanpa glare atau baret.",
     icon: "ShieldCheck",
-    badge: "Stage 3 — Pit Lane Green Light"
+    badge: "Optik Bersih 100%"
   },
   {
-    step: "04",
-    title: "Ambil Unit & Gaspol!",
-    subtitle: "Tangsel Pamulang Bendabaru",
-    desc: "Self-pickup langsung di basecamp Bachtiar Camera Pamulang Bendabaru, atau kirim via Gosend / Grab Express instant ke lokasi balapanmu.",
-    icon: "Flame",
-    badge: "Stage 4 — Launch Control"
+    number: "02",
+    title: "Pemula Diajarin Sampai Bisa",
+    desc: "Belum pernah pakai kamera 360 atau DSLR? Tenang! Admin siap tutorial langsung cara setting & reframe saat serah terima unit.",
+    icon: "GraduationCap",
+    badge: "Free Tutorial"
   },
   {
-    step: "05",
-    title: "Kembalikan & Share Footage",
-    subtitle: "Tag & Dapatkan Diskon Next Order",
-    desc: "Kembalikan unit tepat waktu dalam kondisi baik. Upload karya video balapanmu dan tag @sewa.camera.pamulang & @bachtiar._.photography.id untuk diskon 15%!",
-    icon: "Award",
-    badge: "Finish Line — Podium Juara"
+    number: "03",
+    title: "Unit Disimpan Dalam Drybox",
+    desc: "Semua kamera dan lensa disimpan dalam electric drybox khusus dengan kelembaban terjaga agar terhindar dari jamur & debu.",
+    icon: "Box",
+    badge: "Anti-Jamur"
+  },
+  {
+    number: "04",
+    title: "FREE Sticker Eksklusif",
+    desc: "Setiap penyewaan dapat bonus stiker resmi Bachtiar Camera Pamulang & Bachtiarphotography.id untuk ditempel di helm / motor.",
+    icon: "Sparkles",
+    badge: "Free Merchandise"
+  },
+  {
+    number: "05",
+    title: "Tidak Hanya Sewa, Tapi Buka Jasa",
+    desc: "Kami juga melayani jasa fotografer & videografer profesional untuk Wedding, Birthday Party, Event Drag, dan Photoshoot Outdoor.",
+    icon: "Camera",
+    badge: "Jasa Foto & Video"
+  }
+];
+
+export const RENTAL_TERMS = [
+  {
+    title: "Diskon Sewa Jangka Panjang",
+    desc: "Potongan Rp 10.000 / hari untuk sewa minimal 3 hari (berlaku kelipatan). Makin lama sewa, makin hemat!",
+    highlight: "Diskon Rp 10K/Hari"
+  },
+  {
+    title: "Pembayaran Lunas di Awal",
+    desc: "Wajib dibayar lunas di awal saat serah terima barang. Tidak menerima sistem hutang atau bayar belakangan.",
+    highlight: "No Hutang"
+  },
+  {
+    title: "Toleransi Keterlambatan",
+    desc: "Sewa 24 Jam: Toleransi keterlambatan maksimal 1 jam (lewat dari itu dikenakan denda). Sewa 12 Jam / 6 Jam: Tanpa toleransi.",
+    highlight: "Toleransi 1 Jam (24h)"
+  },
+  {
+    title: "Jam Operasional 24 JAM",
+    desc: "Siap melayani pengambilan dan pengembalian unit kapan saja 24 jam nonstop untuk event balap malam & subuh.",
+    highlight: "Standby 24 Jam"
+  },
+  {
+    title: "Tanggung Jawab Kerusakan / Kehilangan",
+    desc: "Segala bentuk kerusakan atau kehilangan unit menjadi tanggung jawab penuh penyewa sesuai nilai perbaikan/penggantian unit.",
+    highlight: "Garansi Tanggung Jawab"
   }
 ];
 
 export const GALLERY_ITEMS = [
   {
     id: 1,
-    title: "Nocturnal Drag 201M High Speed",
-    camera: "GoPro MAX 360° Spherical",
-    category: "Drag Night",
-    likes: "1.8k",
-    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80",
-    instaUser: "@bachtiar._.photography.id",
+    title: "Open Sewa Insta360 X3 Action",
+    camera: "Insta360 X3 5.7K",
+    category: "Poster Resmi",
+    likes: "2.4k",
+    image: "/images/posters/poster-insta360-x3.jpg",
+    instaUser: "@sewa.camera.pamulang",
     height: "h-96",
-    caption: "Night race panning shot documentation @bachtiar._.photography.id"
+    caption: "Unit Insta360 X3 ready 24 Jam di Pamulang Square"
   },
   {
     id: 2,
-    title: "Pit Stop Burnout & Flame Exhaust",
-    camera: "Canon EOS DSLR Speed Pro",
-    category: "Rolling Shot",
-    likes: "2.4k",
-    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
+    title: "Open Sewa Canon 1300D & Fuji X-A3",
+    camera: "Canon DSLR & Fujifilm Mirrorless",
+    category: "Poster Resmi",
+    likes: "3.1k",
+    image: "/images/posters/poster-canon-fuji.jpg",
     instaUser: "@bachtiar._.photography.id",
-    height: "h-80",
-    caption: "Trackside bokeh shot by Bachtiar Photography"
+    height: "h-96",
+    caption: "Paket kamera 130K/hari di Pamulang Bendabaru"
   },
   {
     id: 3,
-    title: "Biker Cockpit POV 360 Extreme",
-    camera: "Insta360 X3 / X4 Nitro Pro",
-    category: "Drag Night",
-    likes: "1.3k",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80",
+    title: "5 Keunggulan Bachtiar Camera",
+    camera: "Service & Drybox Care",
+    category: "Informasi",
+    likes: "1.9k",
+    image: "/images/posters/poster-kenapa-harus-sewa.jpg",
     instaUser: "@sewa.camera.pamulang",
     height: "h-96",
-    caption: "Cockpit camera chin-mount rental unit @sewa.camera.pamulang"
+    caption: "Lensguard baru & diajarin sampai bisa"
   },
   {
     id: 4,
-    title: "Night Rolling Shot BSD Speedway",
-    camera: "Canon Speed Pro + 50mm f/1.8",
-    category: "Rolling Shot",
-    likes: "3.9k",
-    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80",
-    instaUser: "@bachtiar._.photography.id",
-    height: "h-80",
-    caption: "High shutter night photography @bachtiar._.photography.id"
+    title: "Persyaratan Identitas Jaminan",
+    camera: "SOP & Verifikasi",
+    category: "Syarat Sewa",
+    likes: "1.5k",
+    image: "/images/posters/poster-persyaratan-dokumen.jpg",
+    instaUser: "@sewa.camera.pamulang",
+    height: "h-96",
+    caption: "KTP Asli + SIM/KK atau Deposit 500K"
   },
   {
     id: 5,
-    title: "Vintage VHS Aesthetic Garage Vibe",
-    camera: "Vintage 90s Camcorder CCD",
-    category: "Aesthetic Y2K",
-    likes: "2.2k",
-    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+    title: "Ketentuan Biaya & Durasi Sewa",
+    camera: "Aturan Sewa 24 Jam",
+    category: "Aturan Sewa",
+    likes: "2.8k",
+    image: "/images/posters/poster-ketentuan-biaya.jpg",
     instaUser: "@bachtiar._.photography.id",
     height: "h-96",
-    caption: "Y2K Street nostalgia garage reel @bachtiar._.photography.id"
+    caption: "Diskon sewa jangka panjang 10K/hari & operasional 24 jam"
   },
   {
     id: 6,
-    title: "Low-Angle Flame Spark Action",
-    camera: "DJI Osmo Action 4 Beast",
-    category: "Drag Night",
-    likes: "1.6k",
-    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80",
-    instaUser: "@sewa.camera.pamulang",
-    height: "h-80",
-    caption: "Swingarm crashproof mount test @sewa.camera.pamulang"
+    title: "Nocturnal Drag 201M High Speed",
+    camera: "GoPro MAX 360° Spherical",
+    category: "Action Footage",
+    likes: "3.5k",
+    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80",
+    instaUser: "@bachtiar._.photography.id",
+    height: "h-96",
+    caption: "Dokumentasi balap malam Pamulang Tangsel"
   }
 ];
 
 export const TESTIMONIALS = [
   {
-    name: "Rian \"Speedy\" Pratama",
+    name: "Rian Speedy Pratama",
     role: "Drag Racer & Content Creator BSD",
-    quote: "Sewa GoPro MAX 360 di Bachtiar Camera buat event drag night Tangsel. Bracket-nya super kokoh, footage 360-nya gak getar sama sekali walau motor tembus 160km/h!",
+    quote: "Sewa Insta360 X3 di Bachtiar Camera buat event drag night Tangsel. Bracket-nya super kokoh, footage 360-nya gak getar sama sekali walau motor tembus 160km/h!",
     rating: 5,
-    unit: "GoPro MAX 360°"
+    unit: "Insta360 X3 360°"
   },
   {
     name: "Dimas Aditya",
     role: "Automotive Photographer Jakarta",
-    quote: "DSLR Canon-nya super fresh, sensor bersih, shutter responsif abis buat rolling shot mobil malam hari. Admin Bachtiar Camera fast respon dan deket di Pamulang!",
+    quote: "DSLR Canon & Fuji-nya super fresh, sensor bersih dari drybox, lensa tajem banget buat rolling shot mobil malam hari. Admin fast respon 24 jam di Pamulang Square!",
     rating: 5,
-    unit: "Canon EOS DSLR Pro"
+    unit: "Canon 1300D & Fuji X-A3"
   },
   {
     name: "Fathir Zaky",
-    role: "Vlogger Motovlog Tangsel",
-    quote: "Insta360 X3 nya lengkap sama invis pole & dual batre. Gak perlu pusing kehabisan baterai pas sunmori ke Bogor. Recommended rental no 1 di Pamulang Bendabaru!",
+    role: "Bikers Motovlog Tangsel",
+    quote: "Lensguard beneran diganti mulus no lecet, diajarin cara reframe video 360 pas ambil unit. Dikasih free stiker juga! Recommended rental no 1 di Tangsel!",
     rating: 5,
-    unit: "Insta360 X3 / X4"
+    unit: "Insta360 X3 + Bracket"
   }
 ];
 
 export const FAQ_ITEMS = [
   {
-    q: "Apa saja syarat untuk sewa kamera di Bachtiar Camera?",
-    a: "Cukup siapkan minimal 2 kartu identitas asli yang masih berlaku (KTP, SIM, KK, Paspor, atau Kartu Mahasiswa/Pelajar). Dokumen dititipkan selama masa sewa sebagai jaminan keamanan."
+    q: "Apa saja syarat dokumen untuk sewa di Bachtiar Camera?",
+    a: "Serahkan 1 dokumen identitas ASLI (bukan fotokopi) seperti KTP (Wajib) + 1 dokumen fotokopi seperti SIM Aktif atau KK. Identitas harus atas nama penyewa sendiri dan ditahan selama masa sewa. Jika dokumen tidak lengkap, wajib membayar Deposit Tunai Rp 500.000 (dikembalikan saat unit selesai disewa)."
   },
   {
-    q: "Dimana lokasi penjemputan unit Bachtiar Camera?",
-    a: "Basecamp kami berlokasi di Pamulang, Bendabaru, Tangerang Selatan (Dekat UNPAM & RS Permata Pamulang). Kami juga melayani COD sekitar Pamulang, Ciputat, BSD, Serpong, dan kirim via GoSend/Grab Express."
+    q: "Berapa biaya sewa Insta360 X3 & Kamera Canon/Fuji?",
+    a: "Insta360 X3: 12 Jam Rp 165.000 | 24 Jam Rp 200.000 (Free bracket pilihan). Canon 1300D & Fujifilm X-A3: Promo Rp 130.000 / Hari. Sewa >= 3 hari dapat potongan diskon Rp 10.000/hari (berlaku kelipatan)!"
   },
   {
-    q: "Apakah include memori dan aksesoris mounting motor?",
-    a: "YA! Setiap rental sudah INCLUDE MicroSD/SD Card Sandisk Extreme kecepatan tinggi, 2x baterai, charger, dan opsi mounting helm / stang / suction cup siap pakai."
+    q: "Berapa DP booking dan apakah bisa di-refund?",
+    a: "Booking unit cukup dengan DP Rp 50.000 untuk mengunci jadwal. Catatan penting: Bagi yang sudah booking, DP tidak bisa di-refund karena sudah kesepakatan di awal."
   },
   {
-    q: "Bagaimana jika mau sewa lebih dari 24 jam atau mingguan?",
-    a: "Kami sediakan Paket Weekend & Paket Mingguan dengan diskon khusus hingga 25%. Langsung klik tombol WhatsApp untuk nego paket hemat."
+    q: "Apakah ada toleransi waktu saat pengembalian?",
+    a: "Untuk sewa 24 Jam, kami berikan toleransi keterlambatan maksimal 1 jam. Sedangkan untuk sewa 12 Jam atau 6 Jam tidak ada toleransi keterlambatan (wajib tepat waktu)."
   },
   {
-    q: "Bagaimana cara booking agar unit tidak keduluan orang lain?",
-    a: "Hubungi WhatsApp kami di 0896-5428-0181 untuk lock tanggal & unit dengan DP minimal 50rb. Unit dijamin standby saat jadwal sewa."
+    q: "Dimana lokasi pengambilan unit?",
+    a: "Basecamp kami berlokasi di Pamulang Bendabaru & Pamulang Square, Tangerang Selatan. Operasional 24 JAM nonstop untuk pengambilan dan pengembalian unit."
+  },
+  {
+    q: "Apakah Bachtiar Camera juga melayani jasa fotografer/videografer?",
+    a: "YA! Kami tidak hanya menyewakan unit, tetapi juga menyediakan jasa fotografi & videografi profesional untuk Wedding, Birthday Party, Event Otomotif/Drag, dan Photoshoot."
+  }
+];
+
+
+export const RENTAL_STEPS = [
+  {
+    step: "01",
+    title: "Pilih Unit & Jadwal",
+    desc: "Pilih kamera Insta360 X3, Canon, Fuji, atau GoPro dan tentukan durasi sewa (12 Jam / 24 Jam / 3+ Hari).",
+    icon: "Camera",
+    badge: "Tahap 1 — Booking"
+  },
+  {
+    step: "02",
+    title: "Siapkan KTP & SIM/KK",
+    desc: "Siapkan 1 dokumen identitas ASLI (KTP) + 1 fotokopi (SIM/KK). Tanpa dokumen lengkap? Opsi deposit 500K.",
+    icon: "FileCheck",
+    badge: "Tahap 2 — Identitas"
+  },
+  {
+    step: "03",
+    title: "Verifikasi Kilat (5 Menit)",
+    desc: "Admin memverifikasi data dan mengunci unit dengan DP Rp 50.000 (tidak bisa di-refund).",
+    icon: "ShieldCheck",
+    badge: "Tahap 3 — Lock Jadwal"
+  },
+  {
+    step: "04",
+    title: "Ambil Unit 24 Jam",
+    desc: "Ambil langsung di Pamulang Square / Pamulang Bendabaru (24 Jam) dan difoto saat serah terima.",
+    icon: "Flame",
+    badge: "Tahap 4 — Gaspol"
+  },
+  {
+    step: "05",
+    title: "Kembalikan Tepat Waktu",
+    desc: "Toleransi 1 jam untuk sewa 24 jam. Tag @sewa.camera.pamulang & @bachtiar._.photography.id!",
+    icon: "Award",
+    badge: "Tahap 5 — Selesai"
   }
 ];

@@ -2,12 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { MessageCircle, ShieldCheck, ChevronRight, Video, Compass, Award } from "lucide-react";
-import { getWhatsAppLink } from "@/lib/utils";
+import { MessageCircle, ShieldCheck, ChevronRight, Video, Compass, Award, Sparkles } from "lucide-react";
 import SpeedometerTelemetry from "./SpeedometerTelemetry";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onOpenBooking?: () => void;
+}
+
+export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   return (
     <section className="relative pt-20 sm:pt-28 pb-8 sm:pb-12 flex items-center justify-center overflow-hidden">
       {/* Background Racing Night Overlay */}
@@ -39,7 +41,7 @@ export default function HeroSection() {
               #1 Rental Kamera 360 & Action Cam Tangsel
             </span>
             <span className="text-zinc-600 hidden sm:inline">•</span>
-            <span className="text-[10px] sm:text-xs font-mono text-racing-neon font-semibold hidden sm:inline">Pamulang Bendabaru</span>
+            <span className="text-[10px] sm:text-xs font-mono text-racing-neon font-semibold hidden sm:inline">Pamulang Square & Bendabaru (24 Jam)</span>
           </div>
 
           {/* Kinetic Heavy-Hitting Typography */}
@@ -52,7 +54,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-xs sm:text-base text-zinc-300 max-w-2xl mx-auto font-normal leading-relaxed px-2">
-              Sewa <span className="text-racing-neon font-semibold">GoPro MAX 360°</span>, <span className="text-racing-cyan font-semibold">Insta360 X3/X4</span>, <span className="text-racing-purple font-semibold">Canon DSLR</span>, & Aksesoris Extreme Mounting Pamulang.
+              Sewa <span className="text-racing-cyan font-semibold">Insta360 X3</span> (165K/12h), <span className="text-racing-purple font-semibold">Canon 1300D & Fuji X-A3</span> (130K/hari), <span className="text-racing-neon font-semibold">GoPro MAX</span>, & Jasa Fotografi 24 Jam Pamulang.
             </p>
           </div>
 
@@ -65,33 +67,31 @@ export default function HeroSection() {
 
             <div className="flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-lg border border-racing-cyan/30 text-zinc-200 text-[10px] sm:text-xs font-mono">
               <Video className="w-3 h-3 text-racing-cyan" />
-              <span>4K/60FPS Hypersmooth POV</span>
+              <span>Free Bracket Pilihan</span>
             </div>
 
             <div className="flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-lg border border-racing-purple/30 text-zinc-200 text-[10px] sm:text-xs font-mono">
               <ShieldCheck className="w-3 h-3 text-racing-purple" />
-              <span>Garansi Unit & Acc</span>
+              <span>Lensguard Selalu Baru</span>
             </div>
 
             <div className="flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-lg border border-racing-yellow/30 text-zinc-200 text-[10px] sm:text-xs font-mono">
               <Award className="w-3 h-3 text-racing-yellow" />
-              <span>Mulai Rp 40K</span>
+              <span>Diskon 10K/Hari (&ge;3 Hari)</span>
             </div>
           </div>
 
           {/* Glowing Animated CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-2.5 pt-1 w-full max-w-sm sm:max-w-none sm:w-auto">
-            <a
-              href={getWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group w-full sm:w-auto px-6 py-3 rounded-2xl text-black font-extrabold text-xs sm:text-sm bg-gradient-to-r from-racing-neon via-emerald-400 to-racing-cyan shadow-lg shadow-racing-neon/30 hover:shadow-racing-neon/60 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 overflow-hidden"
+            <button
+              onClick={onOpenBooking}
+              className="relative group w-full sm:w-auto px-6 py-3 rounded-2xl text-black font-extrabold text-xs sm:text-sm bg-gradient-to-r from-racing-neon via-emerald-400 to-racing-cyan shadow-lg shadow-racing-neon/30 hover:shadow-racing-neon/60 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 overflow-hidden cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 fill-black" />
-              <span className="tracking-wide">SEWA SEKARANG (WA)</span>
+              <span className="tracking-wide">SEWA SEKARANG (FORMULIR WA)</span>
               <span className="text-[9px] bg-black/20 text-black px-1.5 py-0.5 rounded-full font-mono font-bold">Fast Respon</span>
               <span className="absolute top-0 -left-full w-full h-full bg-white/40 transform -skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
-            </a>
+            </button>
 
             <a
               href="#katalog"

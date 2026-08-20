@@ -6,11 +6,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatRupiah(amount: number): string {
-  return new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    maximumFractionDigits: 0,
-  }).format(amount);
+  // Deterministic formatting across Node.js SSR and all browser environments
+  const numStr = Math.round(amount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `Rp ${numStr}`;
 }
 
 export function getWhatsAppLink(cameraName?: string, duration?: string, customText?: string): string {

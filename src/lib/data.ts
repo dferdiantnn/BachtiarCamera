@@ -169,7 +169,7 @@ export const CAMERAS: CameraItem[] = [
       "Converter Card Reader to iPhone/Android",
       "Strap Vintage Kulit + Pouch Bag"
     ],
-    image: "https://images.unsplash.com/photo-1590291103653-997f5deee905?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80",
     rating: 4.7,
     reviewCount: 68,
     racingUse: "Video dokumentasi pit-crew & after-party sirkuit bertema Y2K"

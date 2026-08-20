@@ -225,7 +225,7 @@ export const OFFICIAL_POSTERS = [
   },
   {
     id: 3,
-    title: "5 Alasan Kenapa Harus Sewa di Bachtiar Camera",
+    title: "5 Alasan Kenapa Harus Sewa di bachtiar._.photography.id",
     subtitle: "Lensguard Baru, Diajarin Sampai Bisa, Drybox, Free Sticker, Buka Jasa Foto",
     image: "/images/posters/poster-kenapa-harus-sewa.jpg",
     category: "Keunggulan Layanan",
@@ -274,7 +274,7 @@ export const WHY_CHOOSE_US = [
   {
     number: "04",
     title: "FREE Sticker Eksklusif",
-    desc: "Setiap penyewaan dapat bonus stiker resmi Bachtiar Camera Pamulang & Bachtiarphotography.id untuk ditempel di helm / motor.",
+    desc: "Setiap penyewaan dapat bonus stiker resmi bachtiar._.photography.id Pamulang & Bachtiarphotography.id untuk ditempel di helm / motor.",
     icon: "Sparkles",
     badge: "Free Merchandise"
   },
@@ -340,7 +340,7 @@ export const GALLERY_ITEMS = [
   },
   {
     id: 3,
-    title: "5 Keunggulan Bachtiar Camera",
+    title: "5 Keunggulan bachtiar._.photography.id",
     camera: "Service & Drybox Care",
     category: "Informasi",
     likes: "1.9k",
@@ -388,7 +388,7 @@ export const TESTIMONIALS = [
   {
     name: "Rian Speedy Pratama",
     role: "Drag Racer & Content Creator BSD",
-    quote: "Sewa Insta360 X3 di Bachtiar Camera buat event drag night Tangsel. Bracket-nya super kokoh, footage 360-nya gak getar sama sekali walau motor tembus 160km/h!",
+    quote: "Sewa Insta360 X3 di bachtiar._.photography.id buat event drag night Tangsel. Bracket-nya super kokoh, footage 360-nya gak getar sama sekali walau motor tembus 160km/h!",
     rating: 5,
     unit: "Insta360 X3 360°"
   },
@@ -410,7 +410,7 @@ export const TESTIMONIALS = [
 
 export const FAQ_ITEMS = [
   {
-    q: "Apa saja syarat dokumen untuk sewa di Bachtiar Camera?",
+    q: "Apa saja syarat dokumen untuk sewa di bachtiar._.photography.id?",
     a: "Serahkan 1 dokumen identitas ASLI (bukan fotokopi) seperti KTP (Wajib) + 1 dokumen fotokopi seperti SIM Aktif atau KK. Identitas harus atas nama penyewa sendiri dan ditahan selama masa sewa. Jika dokumen tidak lengkap, wajib membayar Deposit Tunai Rp 500.000 (dikembalikan saat unit selesai disewa)."
   },
   {
@@ -430,7 +430,7 @@ export const FAQ_ITEMS = [
     a: "Basecamp kami berlokasi di Pamulang Bendabaru & Pamulang Square, Tangerang Selatan. Operasional 24 JAM nonstop untuk pengambilan dan pengembalian unit."
   },
   {
-    q: "Apakah Bachtiar Camera juga melayani jasa fotografer/videografer?",
+    q: "Apakah bachtiar._.photography.id juga melayani jasa fotografer/videografer?",
     a: "YA! Kami tidak hanya menyewakan unit, tetapi juga menyediakan jasa fotografi & videografi profesional untuk Wedding, Birthday Party, Event Otomotif/Drag, dan Photoshoot."
   }
 ];

@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bachtiar Camera — Sewa Kamera 360° & Action Cam Pamulang Tangsel",
+  title: "bachtiar._.photography.id — Sewa Kamera 360° & Action Cam Pamulang Tangsel",
   description: "Rental GoPro MAX 360, Insta360 X3/X4, Canon DSLR, Vintage Camcorder & Action Cam di Pamulang Bendabaru, Tangerang Selatan. Siap rekam aksi balap drag race, motovlog, dan rolling shot.",
   keywords: [
     "sewa gopro pamulang",
     "rental kamera 360 tangsel",
-    "bachtiar camera",
+    "bachtiar._.photography.id",
     "sewa insta360 pamulang",
     "sewa action cam balap drag",
     "rental dslr tangsel",
     "sewa kamera bendabaru"
   ],
-  authors: [{ name: "Bachtiar Camera" }],
+  authors: [{ name: "bachtiar._.photography.id" }],
   openGraph: {
-    title: "Bachtiar Camera — Sewa Kamera 360° & Action Cam Pamulang Tangsel",
+    title: "bachtiar._.photography.id — Sewa Kamera 360° & Action Cam Pamulang Tangsel",
     description: "Capture setiap detik balapanmu dengan armada kamera 360° dan action cam terbaik di Pamulang, Tangsel.",
-    url: "https://bachtiarcamera.com",
-    siteName: "Bachtiar Camera",
+    url: "https://bachtiarphotography.id",
+    siteName: "bachtiar._.photography.id",
     locale: "id_ID",
     type: "website",
   },

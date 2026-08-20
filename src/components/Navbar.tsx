@@ -49,7 +49,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-sm sm:text-base tracking-wider text-white flex items-center gap-1">
-                BACHTIAR<span className="text-racing-neon">.CAMERA</span>
+                bachtiar<span className="text-racing-neon">._.photography.id</span>
               </span>
               <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-mono text-zinc-400 flex items-center gap-1">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-racing-neon animate-pulse" />

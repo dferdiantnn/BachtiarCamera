@@ -92,7 +92,7 @@ export default function KenapaHarusSewa({ onOpenBooking }: KenapaHarusSewaProps)
               />
             </div>
             <div className="text-center pt-2 text-[10px] font-mono text-zinc-400">
-              Official Leaflet • Bachtiar Camera Pamulang
+              Official Leaflet • bachtiar._.photography.id Pamulang
             </div>
           </div>
         </div>

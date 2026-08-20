@@ -78,7 +78,7 @@ export default function PosterSpotlight({ onOpenBooking }: PosterSpotlightProps)
           <div className="lg:col-span-7 space-y-4">
             <div>
               <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-racing-cyan font-bold">
-                {activePoster.category} • Bachtiar Camera
+                {activePoster.category} • bachtiar._.photography.id
               </span>
               <h3 className="text-xl sm:text-3xl font-black text-white mt-0.5">
                 {activePoster.title}

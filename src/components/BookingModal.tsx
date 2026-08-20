@@ -71,7 +71,7 @@ export default function BookingModal({ isOpen, onClose, initialCameraId }: Booki
       ? "⚠️ Dokumen tidak lengkap -> Bersedia Deposit Tunai Rp 500.000"
       : `✅ Dokumen Lengkap: KTP Asli (${ktpFile ? "File Siap Kirim" : "Terlampir"}) + SIM/KK (${simFile || kkFile ? "File Siap Kirim" : "Terlampir"})`;
 
-    const message = `*FORMULIR PENYEWAAN BACHTIAR CAMERA*\n` +
+    const message = `*FORMULIR PENYEWAAN bachtiar._.photography.id*\n` +
       `-------------------------------------------\n` +
       `👤 *Data Penyewa:*\n` +
       `• Nama: ${name}\n` +
@@ -91,7 +91,7 @@ export default function BookingModal({ isOpen, onClose, initialCameraId }: Booki
       `• Bersedia Difoto Saat Pengambilan: ${agreePhoto ? "Ya" : "Tidak"}\n` +
       `• DP 50RB Non-Refundable: ${agreeNoRefund ? "Setuju" : "Tidak"}\n` +
       `-------------------------------------------\n` +
-      `Halo Admin Bachtiar Camera! Saya sudah mengisi formulir ini dan siap mengirimkan foto dokumen jaminan. Mohon konfirmasi ketersediaan unit. Terima kasih!`;
+      `Halo Admin bachtiar._.photography.id! Saya sudah mengisi formulir ini dan siap mengirimkan foto dokumen jaminan. Mohon konfirmasi ketersediaan unit. Terima kasih!`;
 
     const waUrl = `https://wa.me/6289507208615?text=${encodeURIComponent(message)}`;
     window.open(waUrl, "_blank");

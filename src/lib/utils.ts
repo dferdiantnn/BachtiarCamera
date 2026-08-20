@@ -22,7 +22,7 @@ export function getAssetPath(path: string): string {
 
 export function getWhatsAppLink(cameraName?: string, duration?: string, customText?: string): string {
   const phone = "6289507208615";
-  let message = "Halo Admin Bachtiar Camera! Saya ingin booking rental kamera.\n";
+  let message = "Halo Admin bachtiar._.photography.id! Saya ingin booking rental kamera.\n";
   
   if (cameraName) {
     message += `\n📸 Unit: ${cameraName}`;

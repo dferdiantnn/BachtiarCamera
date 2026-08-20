@@ -19,7 +19,7 @@ export default function TermsSection({ onOpenBooking }: { onOpenBooking: () => v
             SYARAT DOKUMEN & KETENTUAN BIAYA
           </h2>
           <p className="text-zinc-400 text-xs sm:text-sm">
-            Harap dibaca dengan teliti sebelum melakukan reservasi unit di Bachtiar Camera Pamulang Bendabaru / Pamulang Square.
+            Harap dibaca dengan teliti sebelum melakukan reservasi unit di bachtiar._.photography.id Pamulang Bendabaru / Pamulang Square.
           </p>
         </div>
 

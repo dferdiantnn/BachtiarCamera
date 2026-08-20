@@ -36,7 +36,7 @@ export default function LocationAndMap({ onOpenBooking }: LocationAndMapProps) {
           <div className="rounded-3xl overflow-hidden bg-[#0F101A] border border-white/15 p-4 sm:p-5 shadow-2xl relative">
             <div className="relative w-full h-56 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group">
               <iframe
-                title="Bachtiar Camera Location Map"
+                title="bachtiar._.photography.id Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.49826048123!2d106.7126!3d-6.3314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTknNTMuMCJTIDEwNsKwNDInNDUuNCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
@@ -49,7 +49,7 @@ export default function LocationAndMap({ onOpenBooking }: LocationAndMapProps) {
                 <div>
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-racing-neon animate-pulse" />
-                    Bachtiar Camera Pamulang
+                    bachtiar._.photography.id Pamulang
                   </div>
                   <div className="text-[10px] font-mono text-zinc-400">Pamulang Square & Bendabaru</div>
                 </div>

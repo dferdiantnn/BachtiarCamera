@@ -29,7 +29,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
                 </div>
               </div>
               <span className="font-extrabold text-lg tracking-wider text-white">
-                BACHTIAR<span className="text-racing-neon">.CAMERA</span>
+                bachtiar<span className="text-racing-neon">._.photography.id</span>
               </span>
             </div>
 
@@ -132,7 +132,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <div className="text-center sm:text-left text-zinc-500 text-[11px]">
-            © {new Date().getFullYear()} <span className="text-white font-bold">Bachtiar Camera</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-white font-bold">bachtiar._.photography.id</span>. All rights reserved.
           </div>
 
           <button

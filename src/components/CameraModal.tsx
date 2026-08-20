@@ -76,7 +76,7 @@ export default function CameraModal({ camera, onClose, onOpenBooking }: CameraMo
             <div className="space-y-4">
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-racing-cyan">
-                  Katalog Unit Bachtiar Camera
+                  Katalog Unit bachtiar._.photography.id
                 </span>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
                   {camera.name}
